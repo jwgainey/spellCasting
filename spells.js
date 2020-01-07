@@ -12,4 +12,14 @@ var fireball, dmg = 0;
       dmg += fireball;  
    }
 
+if ( spellCast === 'lightning bolt' )
+var lightningBolt, dmg = 0;
+   for (var i = 0; i < 6; i += 1) {
+      lightningBolt = d8;
+      dmg += lightningBolt;  
+   }   
+
+  
+
+
    alert(dmg);
