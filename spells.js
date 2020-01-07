@@ -5,6 +5,16 @@ var d10 = Math.floor(Math.random()*10) + 1;
 var spellCast = prompt("What spell do you cast?");
 var lvl = prompt("At what level?");
 
+// need to add modifier
+if ( spellCast === 'cure wounds' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (1+(lvl-1)); i += 1) {
+         die = d8;
+         var cuWo = dmg += die;  
+      }
+      document.write("You healed " + cuWo + " points of damage!");
+   }
+
 if ( spellCast === 'inflict wounds' ) {
 var die, dmg = 0;
    for (var i = 0; i < (3+(lvl-1)); i += 1) {
@@ -53,11 +63,11 @@ var die, dmg = 0;
 
 if ( spellCast === 'disintegrate' ) {
 var die, dmg = 40;
-   for (var i = 0; i < 10; i += 1) {
+   for (var i = 0; i < (10+(3*(lvl-6))); i += 1) {
       die = d6;
       var disint = dmg += die;
    } 
-   document.write(disint); 
+   document.write("You did " + disint + " points of force damage! Ouch!"); 
 }  
 
 if ( spellCast === 'psychic scream' ) {
@@ -66,7 +76,7 @@ var die, dmg = 0;
       die = d6;
       var psychicScream = dmg += die;
    }  
-   document.write("You did " + psychicScream + " points of psychic damage!");
+   document.write("You did " + psychicScream + " points of psychic damage! Watch for splatter!");
 }   
 
    
