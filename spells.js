@@ -17,9 +17,20 @@ var lightningBolt, dmg = 0;
    for (var i = 0; i < 6; i += 1) {
       lightningBolt = d8;
       dmg += lightningBolt;  
-   }   
+   }   adde
 
-  
+if ( spellCast === 'disintegrate' )
+var disint, dmg = 40;
+   for (var i = 0; i < 10; i += 1) {
+      disint = d6;
+      dmg += disint;  
+   }  
 
+if ( spellCast === 'psychic scream' )
+var psychicScream, dmg = 0;
+   for (var i = 0; i < 14; i += 1) {
+      psychicScream = d6;
+      dmg += psychicScream;  
+      }   
 
    alert(dmg);
