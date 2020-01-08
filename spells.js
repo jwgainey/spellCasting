@@ -23,17 +23,6 @@ if ( spellCast === 'arms of hadar' ) {
    document.write("You did " + armOfHad + " points of necrotic damage!");
 }
 
-if ( spellCast === 'catapult' ) {
-   var die, dmg = 0;
-      for (var i = 0; i < (3+(lvl-1)); i += 1) {
-         die = d8;
-         var cat = dmg += die;  
-   }
-   document.write("You did " + cat + " points of yeet damage!");
-}
-
-
-
 if ( spellCast === 'burning hands' ) {
    var die, dmg = 0;
       for (var i = 0; i < (3+(lvl-1)); i += 1) {
@@ -43,23 +32,70 @@ if ( spellCast === 'burning hands' ) {
    document.write("You did " + burHan + " points of fire damage!");
 }
 
-if ( spellCast === 'inflict wounds' ) {
+if ( spellCast === 'catapult' ) {
    var die, dmg = 0;
       for (var i = 0; i < (3+(lvl-1)); i += 1) {
-         die = d10;
-         var inWo = dmg += die;  
+         die = d8;
+         var cat = dmg += die;  
    }
-   document.write("You did " + inWo + " points of necrotic damage!");
+   document.write("You did " + cat + " points of yeet damage!");
+}
+
+//this one is real tricky-- do later
+/*if ( spellCast === 'chaos bolt' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (1+(lvl-1)); i += 1) {
+         die = d6;
+         var cB = dmg += die;  
+   }
+   document.write("You did " + cB + " points of ??? damage!");
+} */
+
+if ( spellCast === 'chromatic orb' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (3+(lvl-1)); i += 1) {
+         die = d8;
+         var crOr = dmg += die;  
+   }
+   document.write("You did " + crOr + " points of elemental damage!");
+}
+
+if ( spellCast === 'color spray' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < 6+(2*(lvl-1)); i += 1) {
+         die = d10;
+         var colSp = dmg += die;  
+   }
+   document.write("You did " + colSp + " points of gaudy damage!");
 }
 
 // need to add modifier
 if ( spellCast === 'cure wounds' ) {
+ //  var mod = prompt("What is your WIS modifier?");
    var die, dmg = 0;
       for (var i = 0; i < (1+(lvl-1)); i += 1) {
          die = d8;
          var cuWo =  dam += die;  
    }
    document.write("You healed " + cuWo + " points of damage!");
+}
+
+if ( spellCast === 'false life' ) {
+   var die, dmg = 4*lvl;
+      for (var i = 0; i < (1+(lvl-1)); i += 1) {
+         die = d4;
+         var fLf = dmg += die;  
+   }
+   document.write("You gain " + fLf + " temporary hit points!");
+}
+
+if ( spellCast === 'guiding bolt' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (4+(lvl-1)); i += 1) {
+         die = d6;
+         var guBo = dmg += die;  
+   }
+   document.write("You did " + guBo + " points of radiant damage!");
 }
 
 if ( spellCast === 'inflict wounds' ) {
