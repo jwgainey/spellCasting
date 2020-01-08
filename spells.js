@@ -41,15 +41,14 @@ if ( spellCast === 'catapult' ) {
    document.write("You did " + cat + " points of yeet damage!");
 }
 
-//this one is real tricky-- do later
-/*if ( spellCast === 'chaos bolt' ) {
+if ( spellCast === 'chaos bolt' ) {
    var die, dmg = 0;
       for (var i = 0; i < (1+(lvl-1)); i += 1) {
          die = d6;
          var cB = dmg += die;  
    }
-   document.write("You did " + cB + " points of ??? damage!");
-} */
+   document.write("You did " + ((2*d8) + cB) + " points of ??? damage!");
+} 
 
 if ( spellCast === 'chromatic orb' ) {
    var die, dmg = 0;
@@ -96,6 +95,62 @@ if ( spellCast === 'guiding bolt' ) {
          var guBo = dmg += die;  
    }
    document.write("You did " + guBo + " points of radiant damage!");
+}
+
+if ( spellCast === 'hail of thorns' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (1+(lvl-1)); i += 1) {
+         die = d10;
+         var haOfTh = dmg += die;  
+   }
+   document.write("You did " + haOfTh + " points of piercing damage!");
+}
+
+//modifier problem
+if ( spellCast === 'healing word' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (1+(lvl-1)); i += 1) {
+         die = d4;
+         var heWo = dmg += die;  
+   }
+   document.write("You healed " + heWo + " points of damage!");
+}
+
+if ( spellCast === 'hellish rebuke' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (2+(lvl-1)); i += 1) {
+         die = d10;
+         var helReb = dmg += die;  
+   }
+   document.write("You did " + helReb + " points of fire damage!");
+}
+
+if ( spellCast === 'hex' ) {
+   var hex= d6;
+   document.write("Add "+ hex + " points of necrotic to your damage!");
+}
+
+if ( spellCast === 'hunters mark' ) {
+   var hehMx= d6;
+   document.write("Add "+ hM + " points to your damage!");
+}
+
+if ( spellCast === 'ice knife' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (2+(lvl-1)); i += 1) {
+         die = d6;
+         var icKn2 = dmg += die;  
+   }
+   document.write("You did " + d10 + " piercing damage and " + icKn2 +" points of cold damage!");
+}
+
+if ( spellCast === 'inflict wounds' ) {
+   var die, dmg = 0;
+      for (var i = 0; i < (3+(lvl-1)); i += 1) {
+         die = d10;
+         var inWo = dmg += die;  
+   }
+   document.write("You did " + inWo + " points of necrotic damage!");
 }
 
 if ( spellCast === 'inflict wounds' ) {
