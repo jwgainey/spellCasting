@@ -73,13 +73,12 @@ if ( spellCast === 'earth tremor' ) {
    document.write("You did " + eT + " point of bludgeoning damage!");
 }
 
-//weird equation needed
 if ( spellCast === 'false life' ) {
-   var die, dmg = 4;
-      for (var i = 0; i < (1+(lvl-1)); i += 1) {
-         die = d4;
-         var fLf = dmg += die;  
-   }
+      dmg = 4;
+      if ( lvl > 1 ) {
+         dmg += 5*lvl;
+      }
+         var fLf = dmg += d4;  
    document.write("You gain " + fLf + " temporary hit points!");
 }
 
