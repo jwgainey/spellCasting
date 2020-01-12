@@ -271,8 +271,8 @@ if ( spellCast === 'spiritual weapon' ) {
       type = 'radiant';
             dmg += dmgDie(1+((spLvl-2)/2), 8) + bsDmg;
 }
-//----- Level 3 ----
 
+//----- Level 3 ----
 if ( spellCast === 'blinding smite' ) {
       type = 'radiant';
             dmg += dmgDie(3, 8) + bsDmg;
@@ -359,7 +359,6 @@ if ( spellCast === 'wind wall' ) {
 }
 
 // ------- Level 4 -----
-
 if ( spellCast === 'blight' ) {
       type = 'necrotic';
             dmg += dmgDie((8+(spLvl-4)), 8);
@@ -371,7 +370,7 @@ if ( spellCast === 'black tentacles' ) {
 }
 
 if ( spellCast === 'fire sheild' ) {
-      type = 'fire or cold';
+      type = 'fire or cold retaliation';
             dmg += dmgDie(2, 8);
 }
 
@@ -388,6 +387,37 @@ if ( spellCast === 'phantasmal killer' ) {
 if ( spellCast === 'shadow of moil' ) {
       type = 'necrotic retaliation';
             dmg += dmgDie(2, 8);
+}
+
+if ( spellCast === 'sickening radiance' ) {
+      type = 'radiant';
+            dmg += dmgDie(4, 10);
+}
+
+if ( spellCast === 'staggering smite' ) {
+      type = 'psychic';
+            dmg += dmgDie(4, 6);
+}
+
+if ( spellCast === 'storm sphere' ) {
+      type = 'bludgeoning';
+            dmg += dmgDie(4, 6) + ' points of electric damage and ' + dmgDie((2+(spLvl-4)), 6);
+}
+
+if ( spellCast === 'vitrolic sphere' ) {
+      type = 'acid';
+            dmg += dmgDie((10+(2*(spLvl-4))), 4);
+}     extTxt = 'Add ' + dmgDie(5, 4) + " points of acid damage at the end of the target's next turn!"; 
+
+if ( spellCast === 'fire wall' ) {
+      type = 'fire';
+            dmg += dmgDie((5+(spLvl-4)), 8);
+}
+
+// ----- Level 5 ----
+if ( spellCast === 'banishing smite' ) {
+      type = 'force';
+            dmg += dmgDie(5, 10);
 }
 
 if ( spellCast === 'finger of death' ) {
