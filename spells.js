@@ -98,7 +98,7 @@ if ( spellCast === 'healing word' ) {
 } 
 
 if ( spellCast === 'hellish rebuke' ) {
-      type = 'fire';
+      type = 'fire retaliation';
             dmg += dmgDie((2+(spLvl-1)), 10) + bsDmg;
 }
 
@@ -123,7 +123,7 @@ if ( spellCast === 'inflict wounds' ) {
             dmg += dmgDie(3+(spLvl-1), 10) + bsDmg;
 }
 
-//-- possible error
+
 if ( spellCast === 'magic missile' ) {
       type = 'force';
       bsDmg = spLvl
@@ -290,19 +290,105 @@ if ( spellCast === 'conjure barrage' ) {
 
 if ( spellCast === 'fireball' ) {
       type = 'fire';
-      dmg += dmgDie((8+(spLvl-3)), 6) + bsDmg;
+            dmg += dmgDie((8+(spLvl-3)), 6) + bsDmg;
 }
 
-if ( spellCast === 'fireball' ) {
+if ( spellCast === 'flame arrows' ) {
       type = 'fire';
-      dmg += dmgDie((8+(spLvl-3)), 6) + bsDmg;
+            dmg += dmgDie(1, 6) + bsDmg;
+}
+
+if ( spellCast === 'hunger of hadar' ) {
+      type = 'acid';
+            dmg += dmgDie (2, 6) + ' points of cold damage and ' + dmgDie(2, 6);
+}
+
+if ( spellCast === 'life transference' ) {
+      type = 'transfer';
+            dmg += dmgDie((4+(spLvl-3)), 8);
+}
+
+if ( spellCast === 'lighting arrow' ) {
+      type = 'electric';
+      extTxt = ' All creatures within 10ft also takes ' + dmgDie(2, 8) + ' points of electric damage!';
+            dmg += dmgDie((4+(spLvl-3)), 8) + bsDmg;
 }
 
 if ( spellCast === 'lightning bolt' ) {
       type = 'electric';
-      dmg += dmgDie((8+(spLvl-3)), 6);
+            dmg += dmgDie((8+(spLvl-3)), 6);
 }
 
+if ( spellCast === 'minute meteors' ) {
+      type = 'fire';
+      extTxt = ' Start with six and add one meteor per spell level above 3!'
+            dmg += dmgDie(2, 6);
+}
+
+if ( spellCast === 'mass healing word' ) {
+      var mod = parseInt(prompt("What is your WIS modifier?"));
+          type = 'healed';
+          extTxt = 'Up to six targets!';
+               dmg += dmgDie((1+(spLvl-3)), 4) + mod;
+}
+
+if ( spellCast === 'spirit guardians' ) {
+      type = 'radiant or necrotic';
+            dmg += dmgDie((3+(spLvl-3)), 8);
+}
+
+if ( spellCast === 'thunder step' ) {
+      type = 'thunder';
+            dmg += dmgDie((3+(spLvl-3)), 10);
+}
+
+if ( spellCast === 'tidal wave' ) {
+      type = 'bludgeoning';
+            dmg += dmgDie((4+(spLvl-3)), 8);
+}
+
+if ( spellCast === 'vampiric touch' ) {
+      type = 'necrotic';
+            dmg += dmgDie((3+(spLvl-3)), 6);
+      extTxt = "You also heal " + Math.ceil( dmg / 2 ) + " points of damage!";
+}
+
+if ( spellCast === 'wind wall' ) {
+      type = 'bludgeoning';
+            dmg += dmgDie(3, 8);
+}
+
+// ------- Level 4 -----
+
+if ( spellCast === 'blight' ) {
+      type = 'necrotic';
+            dmg += dmgDie((8+(spLvl-4)), 8);
+}
+
+if ( spellCast === 'black tentacles' ) {
+      type = 'bludgeoning';
+            dmg += dmgDie(3, 6);
+}
+
+if ( spellCast === 'fire sheild' ) {
+      type = 'fire or cold';
+            dmg += dmgDie(2, 8);
+}
+
+if ( spellCast === 'ice storm' ) {
+      type = 'bludgeoning';
+            dmg += dmgDie(4, 6) + ' points of cold damage and ' +  dmgDie((2+(spLvl-4)), 8);
+}
+
+if ( spellCast === 'phantasmal killer' ) {
+      type = 'psychic';
+            dmg += dmgDie((4+(spLvl-4)), 10);
+}
+
+if ( spellCast === 'shadow of moil' ) {
+      type = 'necrotic retaliation';
+            dmg += dmgDie(2, 8);
+}
 
 if ( spellCast === 'finger of death' ) {
       dmg = 30;
@@ -327,8 +413,10 @@ if ( spellCast === 'psychic scream' ) {
 }   
 
 //---output
-if ( type === 'healed') {
-      document.write("You " + type + " " + dmg + " points of damage!");
+if (type === 'transfer') {
+      document.write("You take " + dmg +  " points of necrotic damage and transfer " + dmg*2 + " points of healing to your ally!");
+} else if ( type === 'healed') {
+      document.write("You " + type + " " + dmg + " points of damage! " + extTxt);
 } else if ( type === 'gain' ) {
       document.write("You gained " + dmg + " temporary hit points!");
 } else {      
