@@ -123,12 +123,16 @@ if ( spellCast === 'inflict wounds' ) {
             dmg += dmgDie(3+(spLvl-1), 10) + bsDmg;
 }
 
-
+//work on
 if ( spellCast === 'magic missile' ) {
       type = 'force';
       bsDmg = spLvl
-            dmg += (3+(spLvl-1), 4) + bsDmg;
-}         
+                  var mM = dmgDie(1, 4);
+                  dmg = (mM+1);
+            for ( var i = 0; i < spLvl; i += 1) {
+                  dmg;
+            }
+}        
 
 if ( spellCast === 'ray of sickness' ) {
       type = 'posion';
@@ -407,7 +411,8 @@ if ( spellCast === 'storm sphere' ) {
 if ( spellCast === 'vitrolic sphere' ) {
       type = 'acid';
             dmg += dmgDie((10+(2*(spLvl-4))), 4);
-}     extTxt = 'Add ' + dmgDie(5, 4) + " points of acid damage at the end of the target's next turn!"; 
+     extTxt = 'Add ' + dmgDie(5, 4) + " points of acid damage at the end of the target's next turn!"; 
+}
 
 if ( spellCast === 'fire wall' ) {
       type = 'fire';
@@ -420,30 +425,188 @@ if ( spellCast === 'banishing smite' ) {
             dmg += dmgDie(5, 10);
 }
 
-if ( spellCast === 'finger of death' ) {
-      dmg = 30;
-      for (var i = 0; i < 7; i += 1) {
-         var finOfDea = dmg += d8;
-   }
-   document.write("You did " + finOfDea + " points of necrotic damage! Enjoy your zombie!");
+if ( spellCast === 'bigbys hand' ) {
+      var mod = parseInt(prompt("What is your spell casting modifier?"));
+      bsDmg = mod;
+      type = 'bludgeoning';
+            dmg += dmgDie((4+(2*(spLvl-5))), 8) + ' or ' + (dmgDie(2+(spLvl-4), 6) + mod);
+}
+
+if ( spellCast === 'cloudkill' ) {
+      type = 'poison';
+            dmg += dmgDie((5+(spLvl-5)), 8);
+}
+
+if ( spellCast === 'cone of cold' ) {
+      type = 'cold';
+            dmg += dmgDie((8+(spLvl-5)), 8);
+}
+
+if ( spellCast === 'conjure volley' ) {
+      type = 'weapon';
+            dmg += dmgDie((8+(spLvl-5)), 8);
+}
+
+if ( spellCast === 'destructive wave' ) {
+      type = 'radiant or necrotic';
+            dmg += dmgDie(5, 6);
+}
+
+if ( spellCast === 'enervation' ) {
+      type = 'necrotic';
+            dmg += dmgDie((4+(spLvl-5)), 8);
+      extTxt = "You also gain " + Math.ceil(dmg / 2) + " point of health back!";
+}
+
+if ( spellCast === 'flame strike' ) {
+      type = 'radiant';
+            dmg += dmgDie(4, 6) + 'points of fire damage and ' + dmgDie(4,6);
+      extTxt = 'Add ' + dmgDie((1*(spLvl-5)), 6) + ' points of fire or radiant damage if you used a higher spell slot!';
+}
+
+//---- Level 6 ----
+if ( spellCast === 'blade barrier') {
+      type = 'slashing';
+            dmg += dmgDie(6, 10);
+}
+
+if ( spellCast === 'chain lightning') {
+      type = 'lightning';
+            dmg += dmgDie(10, 8);
+}
+
+if ( spellCast === 'circle of death') {
+      type = 'necrotic';
+            dmg += dmgDie(8+(2*(spLvl-6)), 6);
 }
 
 if ( spellCast === 'disintegrate' ) {
       type = 'force';
       bsDmg = 40;
       extTxt = ' Ouch!'
-      dmg += dmgDie((10+(spLvl-7)), 6) + bsDmg;
+      dmg += dmgDie((10+(spLvl-6)), 6) + bsDmg;
+}
+
+if ( spellCast === 'harm') {
+      type = 'necrotic';
+            dmg += dmgDie(14, 6);
+}
+
+if ( spellCast === 'freezing sphere') {
+      type = 'cold';
+            dmg += dmgDie(10+(spLvl-6), 6);
+}
+
+if ( spellCast === 'sunbeam') {
+      type = 'radiant';
+            dmg += dmgDie(6, 8);
+}
+
+if ( spellCast === 'wall of ice') {
+      type = 'cold';
+            dmg += dmgDie(5+(2*(spLvl-6)), 6);
+}
+
+if ( spellCast === 'wall of thorns') {
+      type = 'piercing';
+            dmg += dmgDie(7+(spLvl-6), 8);
+}
+
+//---- Level 7 ----
+// work on
+if ( spellCast === 'crown of stars') {
+      type = 'radiant';
+            dmg += dmgDie(4, 12);
+}
+
+if ( spellCast === 'delayed blast fireball') {
+      type = 'fire';
+            dmg += dmgDie(12+(spLvl-7), 6);
+      extTxt = 'Add ' + dmgDie(1, 6) + ' points if it has not detonated yet.';
+}
+
+if ( spellCast === 'finger of death' ) {
+      type = 'necrotic';
+      bsDmg = 30;
+            dmg += dmgDie(7, 8) + bsDmg;
+      extTxt = 'Enjoy your zombie!'
 } 
 
+if ( spellCast === 'fire storm') {
+      type = 'fire';
+            dmg += dmgDie(1, 10);
+}
+
+if ( spellCast === 'regenerate') {
+      type = 'healed';
+      bsDmg = 15
+            dmg += dmgDie(6, 10) + 15;
+      extTxt = 'In addition, you gain 1 HP per turn!';
+}
+
+if ( spellCast === 'whirlwind') {
+      type = 'bludgeoning';
+            dmg += dmgDie(10, 6);
+}
+
+//---- Level 8 ----
+if ( spellCast === 'horrid wilting') {
+      type = 'necrotic';
+            dmg += dmgDie(12, 8);
+}
+
+//little bit of work
+if ( spellCast === 'earthquake') {
+            var fis = dmgDie(1, 6);
+                dmg = (dmgDie(1, 10)*10);
+      document.write("You create " + fis + ' fissures. They are ' + dmg + ' feet deep.');
+}
+
+if ( spellCast === 'incendiary cloud') {
+      type = 'fire';
+            dmg += dmgDie(10, 8);
+}
+
+if ( spellCast === 'sunburst') {
+      type = 'radiant';
+            dmg += dmgDie(12, 6);
+}
+
+// lot of work
+if ( spellCast === 'tsunami') {
+      type = 'bludgeoning';
+            dmg += dmgDie(5, 10);
+}
+
+//---- Level 9 ----
+if ( spellCast === 'meteor swarm' ) {
+      type = 'bludgeoning';
+                  var fiDmg = dmgDie(20, 6);
+                  var blDmg = dmgDie(20, 6);
+            dmg += fiDmg + ' points of fire damage' + blDmg;
+      extTxt = " No kill like overkill."
+}
+
 if ( spellCast === 'psychic scream' ) {
-      for (var i = 0; i < 14; i += 1) {
-         var psyScm = dmg += d6;
-   }  
-   document.write("You did " + psyScm + " points of psychic damage! Watch for splatter!");
-}   
+      type = 'psychic';
+      extTxt = 'Watch out for splatter!';
+            dmg += dmgDie(14, 6);
+}
+
+if ( spellCast === 'storm of vengeance') {
+      type = 'stOfVeng';
+            var thun = dmgDie(2, 6);
+            var aci = dmgDie(1, 6);
+            var lig = dmgDie(10, 6);
+            var blu = dmgDie(2, 6);
+            var col = dmgDie(1,6);
+}
+
 
 //---output
-if (type === 'transfer') {
+if (type === 'stOfVeng') {
+document.write("Round one, you do " + thun + " points of thunder damage. Round two, you do " + aci + ' points of acid damage. Round three, you do ' + lig + ' points of lightning damage. Round four, you do ' + blu + ' points of bludgeoning damage. For rounds five through ten, you do ' + col + ' points of cold damage in addition to the spells mny other effects.');
+} else if (type === 'transfer') {
       document.write("You take " + dmg +  " points of necrotic damage and transfer " + dmg*2 + " points of healing to your ally!");
 } else if ( type === 'healed') {
       document.write("You " + type + " " + dmg + " points of damage! " + extTxt);
